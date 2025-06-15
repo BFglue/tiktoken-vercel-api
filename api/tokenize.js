@@ -1,7 +1,11 @@
 import { encoding_for_model } from "@dqbd/tiktoken";
 
 export default async (req, res) => {
-  const { text = "", model = "gpt-4o" } = req.query;
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method Not Allowed" });
+  }
+
+  const { text = "", model = "gpt-4o" } = req.body;
 
   try {
     const enc = encoding_for_model(model);
