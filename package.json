@@ -1,0 +1,8 @@
+{
+  "name": "tiktoken-api",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@dqbd/tiktoken": "^1.0.6"
+  }
+}
