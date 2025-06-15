@@ -5,5 +5,11 @@
       "src": "api/tokenize.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/tokenize",
+      "dest": "api/tokenize.js"
+    }
   ]
 }
