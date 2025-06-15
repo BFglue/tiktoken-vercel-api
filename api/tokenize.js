@@ -6,7 +6,7 @@ export default async (req, res) => {
   try {
     const enc = encoding_for_model(model);
     const tokens = enc.encode(text);
-    res.status(200).json({ tokens, count: tokens.length });
+    res.status(200).json({ tokens: Array.from(tokens), count: tokens.length });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
